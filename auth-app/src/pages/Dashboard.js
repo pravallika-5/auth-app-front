@@ -9,7 +9,8 @@ const Dashboard = () => {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/profile", {
+     const res = await axios.get(`${process.env.REACT_APP_API_URL}
+/api/profile`, {
         headers: { Authorization: token },
       });
       setUser(res.data);
